@@ -81,16 +81,42 @@ lalu hasilnya diperbarui ke state.
 
 ## Modifikasi Tampilan
 
-Modifikasi dilakukan hanya pada `TasksScreen.kt`:
+Modifikasi dilakukan hanya pada `TasksScreen.kt` yaitu pada bagian tampilan
+saja tanpa mengubah logika coroutine yang ada di modul.
 
-| Bagian | Modul | Modifikasi |
-|---|---|---|
-| Tombol Block UI | Warna default | Warna merah untuk memperjelas ini contoh buruk |
-| Error message | `Text` biasa | `Card` dengan background `errorContainer` + ikon Warning |
-| Tombol Retry | Tombol terpisah di bawah teks | Masuk dalam Card yang sama dengan pesan error |
-| Announcement | `Text` biasa | `Surface` berwarna + ikon Notifications |
-| Course count | `Text` biasa | Dalam Surface yang sama dengan ikon Info |
-| Card task | `Column` biasa | `Row` dengan kotak nomor task berwarna di kiri |
+### 1. Tombol Block UI
+Modul menampilkan tombol Block UI dengan warna default. Diubah menjadi
+warna merah menggunakan `contentColor = MaterialTheme.colorScheme.error`
+untuk memperjelas bahwa tombol ini adalah contoh buruk yang tidak boleh
+ditiru di aplikasi sungguhan.
+
+### 2. Error Message
+Modul menampilkan pesan error sebagai `Text` biasa berwarna merah.
+Diubah menjadi `Card` dengan background `errorContainer` yang dilengkapi
+ikon `Warning` di sebelah kiri dan tombol Retry di sebelah kanan,
+sehingga pesan error lebih mudah terlihat oleh pengguna.
+
+### 3. Tombol Retry (Latihan 2)
+Modul tidak menyertakan tombol Retry. Ditambahkan tombol Retry di dalam
+Card error yang sama. Tombol hanya muncul saat `errorMessage` tidak null
+dan memanggil `loadData()` kembali saat ditekan.
+
+### 4. Info Panel Announcement dan Course Count (Latihan 1)
+Modul menampilkan announcement sebagai `Text` biasa. Diubah menjadi
+`Surface` berwarna `secondaryContainer` dengan ikon `Notifications` di
+depan teks announcement dan ikon `Info` di depan teks jumlah mata kuliah,
+sehingga informasi lebih rapi dan mudah dibaca.
+
+### 5. Card Task
+Modul menampilkan card task dengan `Column` berisi judul dan nama mata
+kuliah saja. Diubah menjadi `Row` dengan kotak nomor task berwarna
+`primaryContainer` di sebelah kiri, judul task dengan `FontWeight.SemiBold`,
+dan nama mata kuliah dengan warna `onSurfaceVariant`.
+
+### 6. Label Sort (Latihan 6)
+Modul tidak memiliki feedback visual setelah sort. Ditambahkan label
+"Diurutkan A–Z" dengan ikon `CheckCircle` berwarna hijau yang muncul
+setelah tombol Sort ditekan sebagai konfirmasi bahwa daftar sudah diurutkan.
 
 ## Screenshot
 
