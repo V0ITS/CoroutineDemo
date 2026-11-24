@@ -96,7 +96,7 @@ Modifikasi dilakukan hanya pada `TasksScreen.kt`:
 
 | State Awal | Error | Loading | Sort |
 |---|---|---|---|
-| ![home](screenshots/1.png) | ![error](screenshots/2.png) | ![loading](screenshots/3.png) | ![sort](screenshots/4.png) |
+| <img src="screenshots/1.png" width="220" /> | <img src="screenshots/2.png" width="220" /> | <img src="screenshots/3.png" width="220" /> | <img src="screenshots/4.png" width="220" /> |
 
 ## Arsitektur
 
